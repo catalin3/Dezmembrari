@@ -23,7 +23,7 @@ if(isset($_COOKIE['remember'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin AlbaDez</title>
+    <title>ADMIN MENU</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -105,9 +105,11 @@ if(isset($_COOKIE['remember'])){
 
                                     ?>
                                 </div>
+                                <!--
                                 <div class="form-group">
                                 	<a href="recovery.php" class="">Recovery password</a>
                                 </div>
+                                -->
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" name="login" class="btn btn-lg btn-success btn-block" value="Login" />
                             </fieldset>

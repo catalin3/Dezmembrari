@@ -4,28 +4,34 @@ $error=0;
 $message='';
 
 if(count($_POST)){
-	if(empty($_POST['name'])){
+	if(empty($_POST['nume'])){
 		$message .= 'Numele obligatoriu<br />';
 		$error = 1;
 	}
-	if(empty($_POST['text'])){
-		$message .= 'Textul obligatoriu<br />';	
+	if(empty($_POST['descriere'])){
+		$message .= 'Descrierea obligatorie<br />';	
 		$error = 1;
 	}
-	if(empty($_FILES['image']['name'])){
-		$message .= 'Imagine obligatoriu<br />';
+	if(empty($_POST['pret'])){
+		$message .= 'Pret obligatoriu<br />';	
+		$error = 1;
+	}
+	/*
+	if(empty($_FILES['poza']['nume'])){
+		$message .= 'Imagine obligatorie<br />';
 		$error = 1;
 
-	}
+	}*/
 	if($error==0){
-		$tmp_name = $_FILES['image']['tmp_name'];
-		$name = $_FILES['image']['name'];
+		$tmp_name = $_FILES['poza']['tmp_name'];
+		$name = $_FILES['poza']['name'];
 		$destination = 'images/'.$name;
 		move_uploaded_file($tmp_name, '../'.$destination);
-		$sql="INSERT INTO posts (name,`text`,date_added,image) VALUES ('".$_POST['name']."','".$_POST['text']."',NOW(),'".$destination."')";
+		//$sql="INSERT INTO oferte (nume,descriere,data_adaugarii,poza) VALUES ('".$_POST['nume']."','".$_POST['descriere']."',NOW(),'".$destination."')";
+		$sql="INSERT INTO oferte (id_cat,nume,descriere,pret,poza) VALUES ('".$_POST['id_cat']."','".$_POST['nume']."','".$_POST['descriere']."','".$_POST['pret']."','".$destination."')";
 		$query1=$db->query($sql);
 			if($query1){
-			echo $div3;
+			echo "Oferta adaugata cu succes!";
 			}
 	}else{
 		echo '<div class="alert alert-danger">
@@ -44,21 +50,25 @@ $sql= $db->query("SELECT * FROM `categorii`");
 		    <form method="post" class="col-md-6" enctype="multipart/form-data">
 			    <div class="form-group">
 					<label>Nume:</label>
-					<input type="text" name="name" class="form-control">
+					<input type="text" name="nume" class="form-control">
 				</div>
-				 <div class="form-group">
-					<label>Text:</label>
-					<textarea class="form-control" rows="5" name="text"></textarea>
+				<div class="form-group">
+					<label>Descriere:</label>
+					<textarea class="form-control" rows="5" name="descriere"></textarea>
+				</div>
+				<div class="form-group">
+					<label>Pret:</label>
+					<input type="text" name="pret" class="form-control">
 				</div>
 				 <div class="form-group">
 					<label>Imagine:</label>
-					<input type="file" name="image" class="form-control">
+					<input type="file" name="poza" class="form-control">
 				</div>
 				 <div class="form-group">
 					<label>Categorie:</label>
-					 <select name="cat_id" class="form-control">
+					 <select name="id_cat" class="form-control">
 					 <?php while($row = $sql->fetch_assoc()) : ?>
-				        <option value="<?php echo $row['id']; ?>" ><?php echo $row['name']; ?></option>
+				        <option value="<?php echo $row['id']; ?>" ><?php echo $row['nume']; ?></option>
 			        <?php endwhile; ?>
 				    </select>
 				</div>
@@ -67,6 +77,5 @@ $sql= $db->query("SELECT * FROM `categorii`");
 		</div>
 	</div>
 </div>
-
 
 <?php include ('footer.php'); ?>

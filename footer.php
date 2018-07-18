@@ -6,7 +6,7 @@
 <footer>
     <div class="row">
         <div class="col-lg-12">
-            <p>Copyright &copy; AlbaDez 2018</p>
+            <p>Copyright &copy; CataDez 2018</p>
         </div>
     </div>
 </footer>

@@ -21,7 +21,7 @@ if(count($_POST)) {
 		$name = $_FILES['poza']['name'];
 		$destination = 'images/'.$name;
 		move_uploaded_file($tmp_name, '../'.$destination);
-		$query=$db->query("UPDATE oferte SET id_cat='".$_POST['id_cat']."', nume='".$_POST['nume']."', descriere='".$_POST['descriere']."', pret='".$_POST['pret']."', poza='".$destination."' WHERE id = ".$_GET['id']);
+		$query=$db->query("UPDATE piese SET nume='".$_POST['nume']."',id_cat='".$_POST['id_cat']."',descriere='".$_POST['descriere']."',pret='".$_POST['pret']."', poza='".$destination."' WHERE id = ".$_GET['id']);
 
 		if($query == true) : ?>
 			<div class="alert alert-success">
@@ -40,7 +40,7 @@ if(count($_POST)) {
 }
 if(isset($_GET['id'])) : 
 
-	$sql= $db->query("SELECT * FROM `oferte` WHERE id = ".$_GET['id']);
+	$sql= $db->query("SELECT * FROM `piese` WHERE id = ".$_GET['id']);
 	$row = $sql->fetch_assoc();
 	$sql1= $db->query("SELECT * FROM `categorii`");
 	?>
