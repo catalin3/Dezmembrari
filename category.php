@@ -28,7 +28,7 @@
                                         <th>Nume</th>
                                         <th>Descriere</th>
                                         <th>Pret</th>
-                                        <th>Data adaugarii</th>
+                                        <th>Poza</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -37,7 +37,17 @@
                                                 <td><?php echo $row['nume']; ?></td>
                                                 <td><?php echo $row['descriere'];?></td>
                                                 <td><?php echo $row['pret'];?></td>
-                                                <td><?php echo $row['data_adaugarii'];?></td>
+                                                <td>
+                                                <div class="col-sm-4 col-lg-6 col-md-2">
+                                                    <div class="thumbnail">
+                                                        <?php if(strlen($row['poza'])==0)  : ?>
+                                                            <img src="http://placehold.it/320x150" alt="">
+                                                        <?php else: ?>
+                                                            <img src="<?php echo $row['poza']; ?>" alt="">
+                                                        <?php endif; ?>
+			                	                    </div>
+                                                </div> 
+                                                </td>
                                             </tr>
                                         <?php endwhile; ?>
                                     </tbody>

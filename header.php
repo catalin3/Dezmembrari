@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Shop Homepage - Start Bootstrap Template</title>
+        <title>CataDez</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -50,14 +50,14 @@
                             </span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">Home</a>
+                    <a class="navbar-brand" href="index.php">HomeCataDez</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
 
                         <li>
-                            <a href="contact.php">Aplicatie</a>
+                            <a href="contact.php">Contact</a>
                         </li>
                     </ul>
                 </div>

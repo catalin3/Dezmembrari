@@ -22,13 +22,13 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img class="slide-image" src="images/slide1.jpg" alt="">
+                            <img class="slide-image" src="images/slide4.jpg" alt="">
                         </div>
                         <div class="item">
-                            <img class="slide-image" src="images/slide2.jpg" alt="">
+                            <img class="slide-image" src="images/slide5.jpg" alt="">
                         </div>
                         <div class="item">
-                            <img class="slide-image" src="images/slide3.jpg" alt="">
+                            <img class="slide-image" src="images/slide6.jpg" alt="">
                         </div>
                     </div>
                     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

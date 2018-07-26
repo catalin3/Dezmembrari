@@ -7,6 +7,7 @@
     <div class="row">
         <div class="col-lg-12">
             <p>Copyright &copy; CataDez 2018</p>
+            <p>Pagina web in curs de dezvoltare</p>
         </div>
     </div>
 </footer>
